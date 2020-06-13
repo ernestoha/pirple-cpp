@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1592019665 source:/home/eherrera/cplusplus/Quadratic/main.cpp
+	<iostream>
+	<math.h>
+
