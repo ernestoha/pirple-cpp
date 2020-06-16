@@ -4,3 +4,4 @@
 * Assignment #3: Basic Input and Output. **Prices**
 * Assignment #4: Conventions and Operators. **Quadratic**
 * Assignment #5: Statements, Switches and Loops. **NumberGuess**
+* Assignment #6: Arrays and Pointers. **TicTacToe**
