@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1592444633 source:/home/eherrera/cplusplus/Engine/main.cpp
+	<iostream>
+	<string>
+	<bitset>
+
