@@ -6,3 +6,4 @@
 * Assignment #5: Statements, Switches and Loops. **NumberGuess**
 * Assignment #6: Arrays and Pointers. **TicTacToe**
 * Assignment #7: Binary and Bits. **Engine**
+* Assignment #8: Application Structure. **TicTacToe**
