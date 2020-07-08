@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1594186709 source:/home/eherrera/cplusplus/PlaylistParser/main.cpp
+	<iostream>
+	<string.h>
+
