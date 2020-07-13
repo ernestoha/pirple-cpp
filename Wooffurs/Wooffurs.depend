@@ -1,6 +1,27 @@
 # depslib dependency file v1.0
-1594613876 source:/home/eherrera/cplusplus/Wooffurs/main.cpp
+1594620754 source:/home/eherrera/cplusplus/Wooffurs/main.cpp
 	<iostream>
 	<iomanip>
 	<string>
+	"Dog.h"
+	"Akita.h"
+
+1594616022 source:/home/eherrera/cplusplus/Wooffurs/src/dog.cpp
+	"dog.h"
+
+1594615985 /home/eherrera/cplusplus/Wooffurs/include/dog.h
+	<string>
+
+1594620875 /home/eherrera/cplusplus/Wooffurs/include/Dog.h
+	<iostream>
+	<string>
+
+1594620951 source:/home/eherrera/cplusplus/Wooffurs/src/Dog.cpp
+	"Dog.h"
+
+1594620326 source:/home/eherrera/cplusplus/Wooffurs/src/Akita.cpp
+	"Akita.h"
+
+1594620928 /home/eherrera/cplusplus/Wooffurs/include/Akita.h
+	<Dog.h>
 

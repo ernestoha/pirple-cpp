@@ -1,6 +1,8 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include "Dog.h"
+#include "Akita.h"
 
 using namespace std;
 
@@ -23,6 +25,7 @@ int main()
     string breed;
     int riskWeight;
     float bRW, hRW;
+    //Dog dogs[dogCount];
     for(int n=0; n<dogCount; n++){
         cin.ignore(); //to clear the input buffer
         cout << "Enter the name of dog #" << n+1 << ": ";
@@ -117,10 +120,19 @@ int main()
                 basePremium = 0;
                 continue;
         }
+
         if (breedCode=='k'){
-            basePremium = hRW;
-            actualPremium = basePremium;
+            Akita ak(dogName, age, weight);
+            ak.sethRW(hRW);
+            ak.showInfo();
+            cout << ak.gethRW() << endl << endl;
+            //basePremium = hRW;
+            //actualPremium = basePremium;
+            actualPremium = ak.gethRW();
         } else {
+            //dogs[n].setName ....
+            Dog dog(dogName, breed, age, weight, subjectToDiscount);
+            //dog.showInfo();
             if (weight<=riskWeight) {
                 basePremium = bRW;
             } else {//if (weigth>riskWeight) {
