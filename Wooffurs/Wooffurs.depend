@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1594613876 source:/home/eherrera/cplusplus/Wooffurs/main.cpp
+	<iostream>
+	<iomanip>
+	<string>
+
