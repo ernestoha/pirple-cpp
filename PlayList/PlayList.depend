@@ -1,0 +1,47 @@
+# depslib dependency file v1.0
+1594708901 source:/home/eherrera/cplusplus/PlayList/List_base.cpp
+	"List_base.h"
+
+1595130400 /home/eherrera/cplusplus/PlayList/List_base.h
+	<iostream>
+	<limits>
+	<string>
+	<vector>
+	<fstream>
+
+1594709459 source:/home/eherrera/cplusplus/PlayList/ListIndex.cpp
+	"ListIndex.h"
+
+1595218301 /home/eherrera/cplusplus/PlayList/ListIndex.h
+	<string>
+	<vector>
+	<algorithm>
+	"List_base.h"
+	"Playlist.h"
+	"PlayListParser.h"
+
+1595221168 /home/eherrera/cplusplus/PlayList/Playlist.h
+	<string>
+	<vector>
+	<algorithm>
+	"List_base.h"
+	"TrackParser.h"
+
+1595132042 /home/eherrera/cplusplus/PlayList/TrackParser.h
+	<vector>
+	<string>
+
+1594709491 source:/home/eherrera/cplusplus/PlayList/Playlist.cpp
+	"Playlist.h"
+
+1594706902 source:/home/eherrera/cplusplus/PlayList/TrackParser.cpp
+	"TrackParser.h"
+
+1594710551 source:/home/eherrera/cplusplus/PlayList/main.cpp
+	"ListIndex.h"
+
+1595132575 /home/eherrera/cplusplus/PlayList/PlayListParser.h
+	<vector>
+	<string>
+	<algorithm>
+

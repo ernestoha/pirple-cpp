@@ -1,15 +1,26 @@
 #include <iostream>
-#include <string.h>
+#include <string>
+#include <vector>
 
 using namespace std;
+string title;
+string artist;
+
+void clear()
+{
+    // _WIN32 = Both 32 bit and 64 bit
+    #if defined(_WIN32)
+        system("cls");
+    #else
+        system("clear");
+    #endif
+}
 
 string trim(string anyString)
 {
     string retVal = anyString;
     int lastPos = retVal.length() -1;
-
     bool found = true;
-
     while(found == true && lastPos >= 0)
     {
         if(retVal.substr(lastPos, 1) == " ")
@@ -26,64 +37,61 @@ string trim(string anyString)
         }
         lastPos = retVal.length() -1;
     }
-
     return retVal;
 }
 
-int main()
+char getTrack()
 {
     int pos;
     string fullName;
-    string title;
-    string artist;
-    while(true){
-        cout << "Enter a track or ‘q’ to quit: " << endl;
-        getline(cin, fullName);
-        
-        if (!fullName.compare("q"))
-            break;
-        if (fullName.length() < 6)
+    cout << "Enter a track or ‘q’ to quit: " << endl;
+    getline(cin, fullName);
+    if (!fullName.compare("q"))
+        return 'b';//break;
+    if (fullName.length() < 6)
+    {
+        cout << "Please enter a track with more than five characters." << endl;
+        // cout << "fullName length = " << fullName.length() << endl;
+        return 'c';//continue;
+    }
+    pos = fullName.find(":");
+    if (pos!=-1)//separates the title and the artist, with the artist first
+    {
+        title = fullName.substr(pos+1);
+        artist = fullName.substr(0, pos);
+    } 
+    else 
+    {
+        pos = fullName.find("-");
+        if (pos!=-1)//First title and the artist
         {
-            cout << "Please enter a track with more than five characters." << endl;
-            // cout << "fullName length = " << fullName.length() << endl;
-            continue;
+            title = fullName.substr(0, pos);
+            artist = fullName.substr(pos+1);
         }
-        pos = fullName.find(":");
-        if (pos!=-1)//separates the title and the artist, with the artist first
+        else
         {
-            title = fullName.substr(pos+1);
-            artist = fullName.substr(0, pos);
-        } 
-        else 
-        {
-            pos = fullName.find("-");
+            pos = fullName.find("–");
             if (pos!=-1)//First title and the artist
             {
                 title = fullName.substr(0, pos);
-                artist = fullName.substr(pos+1);
+                artist = fullName.substr(pos+3);
             }
             else
             {
-                pos = fullName.find("–");
-                if (pos!=-1)//First title and the artist
+                pos = fullName.find(" by ");
+                if (pos!=-1)
                 {
-                    title = fullName.substr(0, pos);
-                    artist = fullName.substr(pos+3);
-                }
-                else
-                {
-                    // pos = fullName.find(" by ");
+                    cout << pos << endl;
                     int posTemp = -1;
                     string temp = fullName;
-                    bool found = true;
                     int c = 0;
-                    while (found == true)
+                    while (true)
                     {
                         pos = temp.find(" by ");
                         if (pos == -1)
                         {
                             pos = posTemp + c -1;
-                            found = false;
+                            break;
                         }
                         else
                         {
@@ -101,16 +109,35 @@ int main()
                         artist = fullName.substr(pos+4);
                     }
                 }
+                else
+                {
+                    return 'e';
+                    //invalid artis:title
+                }
             }
         }
-        title = trim(title);
-        artist = trim(artist);
+    }
+    title = trim(title);
+    artist = trim(artist);
+    return 'o'; //Ok
+}
+
+int main()
+{
+    clear();    
+    while(true){ 
+        char resp = getTrack();
+        if (resp=='b')
+            break;
+        if (resp=='c')
+            continue;
         cout << "TITLE: " << title << endl;
         cout << "AUTHOR: " << artist << endl;
         cout << endl;
     }
     return 0;
 }
+
 /*
     Sail on By - The Spinnakers
     Abby Lane - the Stinkbugs
